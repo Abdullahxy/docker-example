@@ -5,11 +5,10 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.11/main" >> /etc/apk/repositorie
     echo "http://dl-4.alpinelinux.org/alpine/v3.11/community" >> /etc/apk/repositories
 
 # install chromedriver
-RUN apk --no-cache add chromium-chromedriver
+RUN apk --no-cache add chromium-chromedriver gcc
 
 # upgrading pip and cffi
 RUN /usr/local/bin/python -m pip install --upgrade pip
-RUN pip install --upgrade cffi
 
-# install selenium
-RUN pip install selenium
+# install pytest
+RUN pip install pytest
